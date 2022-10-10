@@ -6,12 +6,13 @@ import (
 	"cbridgewrapper/logger"
 	"cbridgewrapper/model"
 	"cbridgewrapper/utils"
+	"io/ioutil"
+	"math/big"
+
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"io/ioutil"
-	"math/big"
 )
 
 const swapTimeOut = 600000
@@ -19,6 +20,7 @@ const swapTimeOut = 600000
 var clientMap map[int32]*EthClient
 
 func init() {
+	logger.Logger.Infof("Initialize client")
 	data, err := ioutil.ReadFile("resources/chains.json")
 	if err != nil || len(data) == 0 {
 		logger.Logger.Fatalf("Invalid chain config")

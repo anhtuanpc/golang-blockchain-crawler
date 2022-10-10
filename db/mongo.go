@@ -5,9 +5,10 @@ import (
 	"cbridgewrapper/entity"
 	"cbridgewrapper/logger"
 	"context"
+	"time"
+
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
-	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -16,6 +17,7 @@ import (
 var relayTransaction *mongo.Collection
 
 func init() {
+	logger.Logger.Infof("Initailize mongo db.")
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	dbHost := config.GetConfig("dbhost")

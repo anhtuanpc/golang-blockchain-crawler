@@ -12,5 +12,12 @@
     "router": "0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3",
     "chainId": 56,
     "network": "BEP20"
+  },
+  {
+    "rpcUrl": "https://bsc-dataseed1.binance.org",
+    "weth": "0x094616f0bdfb0b526bd735bf66eca0ad254ca81f",
+    "router": "0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3",
+    "chainId": 1,
+    "network": "ETHEREUM"
   }
 ]

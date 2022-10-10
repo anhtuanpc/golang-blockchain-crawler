@@ -5,6 +5,7 @@ import (
 	"cbridgewrapper/entity"
 	"cbridgewrapper/logger"
 	"database/sql"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -17,6 +18,7 @@ type GormDAO struct {
 }
 
 func init() {
+	logger.Logger.Infof("Initialize gorm DAO")
 	dsn := config.GetConfig("psql.connectstring")
 	sqlDB, err := sql.Open("pgx", dsn)
 	if err != nil {

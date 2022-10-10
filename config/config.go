@@ -1,8 +1,11 @@
 package config
 
-import "log"
-import "github.com/joho/godotenv"
-import "os"
+import (
+	"log"
+	"os"
+
+	"github.com/joho/godotenv"
+)
 
 func init() {
 	e := godotenv.Load() //Load .env file
